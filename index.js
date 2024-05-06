@@ -11,15 +11,7 @@ http.createServer((req, res) => {
     fs.readFile(filename, (err, data) => {
         if (err) {
             fs.readFile('./404.html', (err, data) => {
-                if (err) {
-                    // Handle error reading 404.html
-                    res.writeHead(500, { 'Content-Type': 'text/plain' });
-                    res.end('Internal Server Error');
-                } else {
-                    res.writeHead(404, { 'Content-Type': 'text/html' });
-                    res.write(data);
-                    res.end();
-                }
+               
             });
             return; // Add return statement here
         }
